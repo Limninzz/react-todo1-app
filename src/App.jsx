@@ -87,7 +87,7 @@ function App() {
   // console.log(todos)
 
   const toggleCompleted = (todoId) => {
-    console.log(todoId);
+    // console.log(todoId);
     const updatedTodos = todos.map((todo) => {
       if (todo.id === todoId) {
         todo.completed = !todo.completed
@@ -97,10 +97,26 @@ function App() {
     setTodos(updatedTodos)
   }
 
+  const deleteTodo = (todoId) => {
+    // console.log('FUNCTION DELETE CALLED', todoId);
+    const findIndex = todos.findIndex(t=>{
+      return t.id === todoId;
+    })
+    if(findIndex !== -1){
+      todos.splice(findIndex,1);
+    }
+    const deleteTodo = todos.map((todo) => {
+      // console.log(todo);
+      return todo
+    }) 
+
+    setTodos(deleteTodo);
+  }
+
   return (
     <div style={styles.container}>
       <h1 style={{fontSize: '36px'}}>My Todo List</h1>
-      <Todos todos={todos} toggleCompleted={toggleCompleted}/>
+      <Todos todos={todos} toggleCompleted={toggleCompleted} deleteTodo={deleteTodo}/>
     </div>
   )
 }
@@ -111,6 +127,7 @@ const styles = {
     textAlign: 'center',
     padding: '12px',
     borderRadius: '10px',
+    // width: '100%',
   }
 
 }
