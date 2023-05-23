@@ -84,14 +84,34 @@ function App() {
     },
   ])
 
-  console.log(todos)
+  // console.log(todos)
+
+  const toggleCompleted = (todoId) => {
+    console.log(todoId);
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        todo.completed = !todo.completed
+      }
+      return todo
+    })
+    setTodos(updatedTodos)
+  }
 
   return (
-    <div style={{ textAlign: 'center', padding: '12px' }}>
+    <div style={styles.container}>
       <h1 style={{fontSize: '36px'}}>My Todo List</h1>
-      <Todos todos={todos} />
+      <Todos todos={todos} toggleCompleted={toggleCompleted}/>
     </div>
   )
 }
 
+const styles = {
+  container: {
+    border: '2px solid Red',
+    textAlign: 'center',
+    padding: '12px',
+    borderRadius: '10px',
+  }
+
+}
 export default App
