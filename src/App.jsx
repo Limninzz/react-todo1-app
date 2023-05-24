@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import Todos from './components/Todos'
+import TodoForm from './components/TodoForm'
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -113,9 +114,24 @@ function App() {
     setTodos(deleteTodo);
   }
 
+  const addTodo = (todoTitle) => {
+    // console.log('This is addTodo Function is ')
+    if(todoTitle === ''){
+      return
+    }
+    const newTodo = {
+      id: todos.length + 1,
+      title: todoTitle,
+      completed: false,
+    }
+    const updatedTodos = todos.concat (newTodo)
+    setTodos(updatedTodos)
+  }
+
   return (
     <div style={styles.container}>
       <h1 style={{fontSize: '36px'}}>My Todo List</h1>
+      <TodoForm addTodo={addTodo} />
       <Todos todos={todos} toggleCompleted={toggleCompleted} deleteTodo={deleteTodo}/>
     </div>
   )
