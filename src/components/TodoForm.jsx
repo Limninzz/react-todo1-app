@@ -18,6 +18,7 @@ const TodoForm = ({addTodo}) => {
   return (
     <div style={styles.container}>
       <form
+        style={styles.form}
         onSubmit={(event) => {
             handleSubmit(event)
         }}
@@ -42,15 +43,22 @@ const styles = {
     marginBottom: '32px',
   },
   formInput: {
-    height: '66px',
-    width: '40%',
-    fontSize: '16px',
+    height: '70px',
+    width: '60%',
+    fontSize: '24px',
     padding: '0 16px',
+    textAlign: 'center',
+    borderRadius: '10px',
   },
   button: {
     height: '72px',
-    fontSize: '16px',
+    fontSize: '20px',
+    backgroundColor: 'orange',
   },
+  form: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+  }
 }
 
 export default TodoForm

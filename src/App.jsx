@@ -139,7 +139,7 @@ function App() {
 
 const styles = {
   container: {
-    border: '2px solid Red',
+    border: '5px solid cyan',
     textAlign: 'center',
     padding: '12px',
     borderRadius: '10px',

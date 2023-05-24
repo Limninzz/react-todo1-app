@@ -39,11 +39,15 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
 const styles = {
   todoItem: {
     border: '2px solid #f4f4f4',
+    borderRadius: '15px',
+    color: 'azure',
     fontSize: '24px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0 20px',
+    margin: '5px auto',
+    textShadow: '0 0 3px cyan, 0 0 5px lime',
   },
   checkbox: {
     marginRight: '10px',
