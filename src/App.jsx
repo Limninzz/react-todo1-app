@@ -116,30 +116,50 @@ function App() {
 
   const addTodo = (todoTitle) => {
     // console.log('This is addTodo Function is ')
+    let newTodo ={};
     if(todoTitle === ''){
       return
     }
-    const newTodo = {
-      id: todos.length + 1,
-      title: todoTitle,
-      completed: false,
+    if(todos.length >= 1){
+      newTodo = {
+        id: todos[todos.length-1].id+1,
+        title: todoTitle,
+        completed: false,
+      }
+    }else {
+      newTodo = {
+        id: todos.length+1,
+        title: todoTitle,
+        completed: false,
+      }
     }
+
     const updatedTodos = todos.concat (newTodo)
     setTodos(updatedTodos)
   }
 
   return (
-    <div style={styles.container}>
-      <h1 style={{fontSize: '36px'}}>My Todo List</h1>
-      <TodoForm addTodo={addTodo} />
-      <Todos todos={todos} toggleCompleted={toggleCompleted} deleteTodo={deleteTodo}/>
+    <div style={styles.wrapper}>
+        <div style={styles.container}>
+          <h1 style={{fontSize: '36px'}}>My Todo List</h1>
+          <TodoForm addTodo={addTodo} />
+          <Todos todos={todos} toggleCompleted={toggleCompleted} deleteTodo={deleteTodo}/>
+      </div>
     </div>
   )
 }
 
 const styles = {
+  wrapper: {
+    background: 'linear-gradient(to right, #88def5, #00ffb1, #ffffff, #61dafb)',
+    filter: 'drop-shadow(2px 5px 15px aqua)',
+    padding: '12px',
+    borderRadius: '15px',
+  },
   container: {
-    border: '5px solid cyan',
+    backgroundImage:"url(./src/assets/cubes-dark-minimalism-h8.jpg)",
+    backgroundSize:'auto',
+    // border: '5px solid cyan',
     textAlign: 'center',
     padding: '12px',
     borderRadius: '10px',

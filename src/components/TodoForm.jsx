@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import './style.css'
 
 const TodoForm = ({addTodo}) => {
     const [title, setTitle] = useState('')
@@ -32,7 +33,7 @@ const TodoForm = ({addTodo}) => {
             }}
             value={title}
         />
-        <button style={styles.button}>Add Todo</button>
+        <button id={'add_todo'} style={styles.button}>Add Todo</button>
       </form>
     </div>
   )
@@ -51,9 +52,13 @@ const styles = {
     borderRadius: '10px',
   },
   button: {
+    position: 'relative',
     height: '72px',
     fontSize: '20px',
     backgroundColor: 'orange',
+    color: 'cyan',
+    boxShadow: '5px 3px',
+    filter: 'drop-shadow(2px 4px 6px aqua)',
   },
   form: {
     display: 'flex',
