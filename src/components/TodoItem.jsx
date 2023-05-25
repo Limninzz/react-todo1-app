@@ -4,16 +4,17 @@ import React from 'react'
 const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
   const getTodoTitleStyle = () => {
     if (todo.completed === true) {
-      return { textDecoration: 'line-through' }
+      return { textDecoration: 'line-through', filter: 'blur(1px)' }
     } else {
       return { textDecoration: 'none' }
     }
   }
-
+  
   return (
-    <div style={styles.todoItem}>
+    <div id={'todo_list'} style={styles.todoItem}>
       {/* Cross Out Item */}
-      <input 
+      <input
+      id={'check'}
       type="checkbox" 
       style={styles.checkbox}
       onChange={() => toggleCompleted(todo.id)}
@@ -21,11 +22,12 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
       {/* Cross Out Item */}
 
       {/* todo list  */}
-      <p style={getTodoTitleStyle()}>{todo.title}</p>
+      <p id={'myP'} style={getTodoTitleStyle()}>{todo.title}</p>
       {/* todo list  */}
 
       {/* delete todo */}
-      <button 
+      <button
+      id={"delete_btn"}
       style={styles.button}
       onClick={() => deleteTodo(todo.id)}
       ><p style={styles.innerButton}>X</p></button>
@@ -38,10 +40,12 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
 
 const styles = {
   todoItem: {
+    width: '700px',
+    height: '50px',
     border: '2px solid #f4f4f4',
     borderRadius: '15px',
     color: 'azure',
-    fontSize: '24px',
+    fontSize: '30px',
     lineHeight: '5px',
     display: 'flex',
     justifyContent: 'space-between',
