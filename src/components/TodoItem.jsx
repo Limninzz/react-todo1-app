@@ -42,6 +42,7 @@ const styles = {
     borderRadius: '15px',
     color: 'azure',
     fontSize: '24px',
+    lineHeight: '5px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',

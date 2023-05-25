@@ -1,0 +1,9 @@
+#add_todo:hover {
+    color:orange;
+    background-color: grey !important;
+}
+#add_todo:active {
+    box-shadow: none !important;
+    top: 3px;
+    left: 5px;
+}
