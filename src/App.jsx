@@ -179,8 +179,8 @@ const styles = {
     borderRadius: '15px',
   },
   container: {
-    backgroundImage:"url(./src/assets/cubes-dark-minimalism-h8.jpg)",
-    backgroundSize:'auto',
+    //backgroundImage:"url(./src/assets/cubes-dark-minimalism-h8.jpg)",
+    background:'black',
     // border: '5px solid cyan',
     textAlign: 'center',
     padding: '12px',
