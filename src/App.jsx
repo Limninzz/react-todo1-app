@@ -103,16 +103,22 @@ function App() {
     const findIndex = todos.findIndex(t=>{
       return t.id === todoId;
     })
+      
+    const myItem = document.querySelectorAll('#todo_list')[findIndex];
+
     const animateTodoList = document.getElementById('todo_list');
-    const myP = document.getElementById('myP');
-    const delete_btn = document.getElementById('delete_btn');
-    const check = document.getElementById('check');
+    
+    const myP = document.querySelectorAll('#myP')[findIndex];
+    const delete_btn = document.querySelectorAll('#delete_btn')[findIndex];
+    const check = document.querySelectorAll('#check')[findIndex];
+
     delete_btn.style.display = 'none';
     check.style.display = 'none';
     myP.style.display = 'none';
-    animateTodoList.style.width = '1px';
-    animateTodoList.style.height = '1px';
-    animateTodoList.style.transform = 'rotate(360deg)';
+
+    myItem.style.width = '1px';
+    myItem.style.height = '1px';
+    myItem.style.transform = 'rotate(360deg)';
     
     
     setTimeout(() => {

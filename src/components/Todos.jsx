@@ -15,7 +15,7 @@ const Todos = ({ todos, toggleCompleted, deleteTodo }) => {
       )
     })}
   </div>
-  )
+  ) 
 }
 
 const styles = {
